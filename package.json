@@ -1,0 +1,24 @@
+{
+  "name": "signupmenu",
+  "version": "1.0.0",
+  "description": "Sign up menu with validation",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src/index.js -o public/scripts/bundle.js --presets env"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PouRiaBG/SignUpMenu.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PouRiaBG/SignUpMenu/issues"
+  },
+  "homepage": "https://github.com/PouRiaBG/SignUpMenu#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "live-server": "^1.2.1"
+  }
+}

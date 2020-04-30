@@ -1,0 +1,43 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    background-color: #f3f3f3;
+}
+main{
+    width: 70vw;
+    height: 90vh;
+    border-radius:1rem;
+    display: flex;
+    background-color: white;
+    border: 1px solid #dadada;
+}
+header{
+    width:40vw;
+    background-color: teal;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+header .welcom{
+    color: white;
+    font-size: 2rem;
+    font-family: Roboto;
+}
+article{
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
+article .Account{
+    font-family: Roboto;
+    color: #1d9a9a;
+    font-size: 2rem;
+}

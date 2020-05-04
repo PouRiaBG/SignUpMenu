@@ -20,7 +20,7 @@ header{
     border-bottom-left-radius: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content:space-evenly;
     align-items: center;
 }
 header .welcom{
@@ -28,10 +28,25 @@ header .welcom{
     font-size: 2rem;
     font-family: Roboto;
 }
+header .login-text{
+    color:#ffffff;
+    font-size: 1rem;
+    font-family: Roboto;
+    padding: 2rem;
+    text-align: center;
+}
+header #signIn{
+    background-color: inherit;
+    border:1px solid white;
+    color: white;
+    font-family: Roboto-light;
+    border-radius: 3rem;
+    padding: 1rem 5rem;
+}
 article{
     width: 60vw;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
     align-items: center;
     
@@ -40,4 +55,34 @@ article .Account{
     font-family: Roboto;
     color: #1d9a9a;
     font-size: 2rem;
+}
+#Form form {
+    display: flex;
+    flex-direction:column;
+}
+#Form input{
+    border:none;
+    width: 20rem;
+    font-family: Roboto-light;
+    height: 3.5rem;
+    background: #eaeaea;
+    margin: 10px;
+    border-radius: 1px;
+}
+#Form input[type="submit"]{
+    background: #1d9a9a;
+    color: white;
+    font-family: Roboto-light;
+    border-radius: 3rem;
+    cursor: pointer;
+}
+/* class for helper span */
+span {
+    display: none;
+}
+.username-help{
+    color: #ff6363;
+    font-size: 0.8rem;
+    font-family: Roboto-light;
+    padding: 1rem;
 }

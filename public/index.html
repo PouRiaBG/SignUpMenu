@@ -9,15 +9,30 @@
     <title>SIGN UP</title>
     <link rel="stylesheet" href="css/reset.css"/>
     <link rel="stylesheet" href="css/font.css"/>
+    <link rel="stylesheet" href="Assets/fontawesome-free-5.13.0-web/css/all.min.css"/>
     <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
     <main>
         <header>
             <p class="welcom">Welcom back!</p>
+            <p class="login-text">Please login here if you have an account</p>
+            <button id="signIn">SIGN IN</button>
         </header>
         <article>
             <p class="Account">Create account</p>
+            <section id="Form">
+                
+                <form novalidate>
+                   <input type="text" placeholder="Name" name="User name" id="userName" onfocusout="validation()"/>
+                   <span class="username-help"></span>
+                    <input type="password" placeholder="Password" name="password"/>
+                    <input type="password" placeholder="Confirm password" name="confrim password"/>
+                    <input type="email" placeholder="Email" name="Email address" />
+                    <input type="submit" value="SIGN UP"/>
+                 </form>
+            </section>
+            
         </article>
     </main>
     <script src="scripts/bundle.js"></script>

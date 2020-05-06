@@ -5,12 +5,6 @@ const password = document.getElementById("password");
 const confirmPass = document.getElementById("confirmPass");
 const email = document.getElementById("email");
 
-//helper span for error massage 
-
-let userNameHelp = document.getElementsByClassName("username-help")[0];
-let passwordHelp = document.getElementsByClassName("username-help")[1];
-
-
 // validators function 
 
 const validateUserName = () =>{
@@ -39,15 +33,20 @@ const validateConfirmPass = ()=>{
     }
     return true;
 }
+const validateEmail = ()=>{
+    if(ifIsEmpty(email)) return ;
 
+    if(containValidAddress(email)) return;
+    return true
+}
 // other 
 const ifIsEmpty = (field) =>{
     if(IsEmpty(field.value.trim())){
         invalidHelper(field,`The ${field.name} can not be empty!`)
-        return true;
+        return ;
     }else{
         validHelper(field)
-        return false;
+        
     }
 }
 
@@ -73,9 +72,12 @@ const validHelper = (field)=>{
 const hasOnlyLetters = (field) =>{
     if(/^[a-zA-z]+$/.test(field.value)){
         validHelper(field)
+        return true
     }else{
         invalidHelper(field,`The ${field.name} most has only letters`)
+        return false
     }
+
 }
 
 const checkPassLength = (field,min,max)=>{
@@ -87,4 +89,14 @@ const checkPassLength = (field,min,max)=>{
         return false;
     }
 
+}
+const containValidAddress = (field) =>{
+    let rex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/igm
+    if(rex.test(field.value)){
+        validHelper(field)
+        return true
+    }else{
+        invalidHelper(field ,  `The ${field.name} is not valid`)
+        return false
+    }
 }

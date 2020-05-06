@@ -7,11 +7,6 @@ var password = document.getElementById("password");
 var confirmPass = document.getElementById("confirmPass");
 var email = document.getElementById("email");
 
-//helper span for error massage 
-
-var userNameHelp = document.getElementsByClassName("username-help")[0];
-var passwordHelp = document.getElementsByClassName("username-help")[1];
-
 // validators function 
 
 var validateUserName = function validateUserName() {
@@ -33,22 +28,26 @@ var validatePassword = function validatePassword() {
 };
 var validateConfirmPass = function validateConfirmPass() {
     if (password.value != confirmPass.value) {
-        invalidHelper(confirmPass, "The " + password.name + " and " + confirmPass.name + " most be sam");
+        invalidHelper(confirmPass, "The " + password.name + " and " + confirmPass.name + " most be same");
         return;
     } else {
         validHelper(confirmPass);
     }
     return true;
 };
+var validateEmail = function validateEmail() {
+    if (ifIsEmpty(email)) return;
 
+    if (containValidAddress(email)) return;
+    return true;
+};
 // other 
 var ifIsEmpty = function ifIsEmpty(field) {
     if (IsEmpty(field.value.trim())) {
         invalidHelper(field, "The " + field.name + " can not be empty!");
-        return true;
+        return;
     } else {
         validHelper(field);
-        return false;
     }
 };
 
@@ -74,8 +73,10 @@ var validHelper = function validHelper(field) {
 var hasOnlyLetters = function hasOnlyLetters(field) {
     if (/^[a-zA-z]+$/.test(field.value)) {
         validHelper(field);
+        return true;
     } else {
         invalidHelper(field, "The " + field.name + " most has only letters");
+        return false;
     }
 };
 
@@ -85,6 +86,16 @@ var checkPassLength = function checkPassLength(field, min, max) {
         return true;
     } else {
         invalidHelper(field, "The " + field.name + " most between 4 and 12.");
+        return false;
+    }
+};
+var containValidAddress = function containValidAddress(field) {
+    var rex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/igm;
+    if (rex.test(field.value)) {
+        validHelper(field);
+        return true;
+    } else {
+        invalidHelper(field, "The " + field.name + " is not valid");
         return false;
     }
 };

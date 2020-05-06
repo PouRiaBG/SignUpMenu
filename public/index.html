@@ -24,10 +24,12 @@
             <section id="Form">
                 
                 <form novalidate>
-                   <input type="text" placeholder="Name" name="User name" id="userName" onfocusout="validation()"/>
+                   <input type="text" placeholder="Name" name="User name" id="userName" onfocusout="validateUserName()"/>
                    <span class="username-help"></span>
-                    <input type="password" placeholder="Password" name="password"/>
-                    <input type="password" placeholder="Confirm password" name="confrim password"/>
+                    <input type="password" placeholder="Password" id="password" name="password" onfocusout="validatePassword()"/>
+                    <span class="username-help"></span>
+                    <input type="password" placeholder="Confirm password" id="confirmPass" name="confrim password" onfocusout="validateConfirmPass()"/>
+                    <span class="username-help"></span>
                     <input type="email" placeholder="Email" name="Email address" />
                     <input type="submit" value="SIGN UP"/>
                  </form>

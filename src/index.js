@@ -8,22 +8,42 @@ const email = document.getElementById("email");
 //helper span for error massage 
 
 let userNameHelp = document.getElementsByClassName("username-help")[0];
+let passwordHelp = document.getElementsByClassName("username-help")[1];
 
 
-// validation function 
+// validators function 
 
-const validation = () =>{
+const validateUserName = () =>{
     // check if input is empty 
     if(ifIsEmpty(userName)) return;
 
     //check has only letters
     if(hasOnlyLetters(userName)) return ;
-
+    return true;
 }
 
+const validatePassword = () =>{
+    //check if the password is empty
+    if(ifIsEmpty(password)) return;
+
+    //lenght of password
+    if(checkPassLength(password,4,12)) return;
+    return true;
+    }
+const validateConfirmPass = ()=>{
+    if(password.value != confirmPass.value){
+        invalidHelper(confirmPass,`The ${password.name} and ${confirmPass.name} most be same`)
+        return
+    }else{
+        validHelper(confirmPass)
+    }
+    return true;
+}
+
+// other 
 const ifIsEmpty = (field) =>{
     if(IsEmpty(field.value.trim())){
-        invalidHelper(`The ${field.name} can not be empty!`)
+        invalidHelper(field,`The ${field.name} can not be empty!`)
         return true;
     }else{
         validHelper(field)
@@ -38,20 +58,33 @@ const IsEmpty = (value) => {
     return false;
 }
 
-const invalidHelper = (massage) =>{
-    userNameHelp.style.display = "inline-block"
-    userNameHelp.innerHTML = massage
+const invalidHelper = (field,massage) =>{
+    let span = field.nextElementSibling
+    span.style.display = "inline-block"
+    span.innerHTML = massage
 }
 
 const validHelper = (field)=>{
-    userNameHelp.style.display = "none"
-    userNameHelp.innerHTML = ""
+    let span = field.nextElementSibling
+    span.style.display = "none"
+    span.innerHTML = ""
 }
 
 const hasOnlyLetters = (field) =>{
     if(/^[a-zA-z]+$/.test(field.value)){
         validHelper(field)
     }else{
-        invalidHelper(`The ${field.name} most has only letters`)
+        invalidHelper(field,`The ${field.name} most has only letters`)
     }
+}
+
+const checkPassLength = (field,min,max)=>{
+    if(field.value.length <= max && field.value.length > min){
+        validHelper(field)
+        return true;
+    }else{
+        invalidHelper(field,`The ${field.name} most between 4 and 12.`)
+        return false;
+    }
+
 }

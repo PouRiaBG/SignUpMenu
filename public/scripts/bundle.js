@@ -7,6 +7,11 @@ var password = document.getElementById("password");
 var confirmPass = document.getElementById("confirmPass");
 var email = document.getElementById("email");
 
+var form = document.getElementById("main-form");
+//Handle the form 
+form.addEventListener("submit", function (event) {
+    event.preventDefault();
+});
 // validators function 
 
 var validateUserName = function validateUserName() {

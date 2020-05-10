@@ -5,6 +5,11 @@ const password = document.getElementById("password");
 const confirmPass = document.getElementById("confirmPass");
 const email = document.getElementById("email");
 
+const form = document.getElementById("main-form");
+//Handle the form 
+form.addEventListener("submit",function(event){
+    event.preventDefault();
+})
 // validators function 
 
 const validateUserName = () =>{

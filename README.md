@@ -1,5 +1,5 @@
 # SignUp menu 
-This project was bootstrapped with vanila javascript.
+This project was bootstrapped with vanilla javascript.
 A simple sign up form with validation.
 
 
@@ -16,3 +16,7 @@ In the project directory, you can run:
 ### `npm install`
 
 This will download and install necessary libraries and npm packages.<br />
+
+Now you can run the project with live-server in the project directory :
+
+### `live-server public`

@@ -4,8 +4,8 @@ A simple sign up form with validation.
 
 ## Requirement and installing
 The package that project need it :
-* Babel-cli  
-* Babel-preset-env
+* babel-cli  
+* babel-preset-env
 * live-server
 
 In the project directory, you can run:

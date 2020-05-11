@@ -2,4 +2,7 @@
 This project was bootstrapped with vanila javascript.
 A simple sign up form with validation.
 
-## Available Scripts
+## Requirement and installing
+* Babel-cli  
+* Babel-preset-env
+* live-server

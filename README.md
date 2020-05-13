@@ -1,22 +1,27 @@
 # SignUp menu 
-This project was bootstrapped with vanilla javascript.
 A simple sign up form with validation.
+This project was bootstrapped with vanilla javascript.
 
 
-![image](https://user-images.githubusercontent.com/34285373/81572578-a03f7400-93b8-11ea-986f-0bc2293f1f2b.png)
+![Screenshot of SignUp Menu interface](https://user-images.githubusercontent.com/34285373/81572578-a03f7400-93b8-11ea-986f-0bc2293f1f2b.png)
 
-## Requirement and installing
-The package that project need it :
-* babel-cli  
-* babel-preset-env
-* live-server
+## Setup
+This program requires `babel-cli`, `babel-preset-env` and `live-server` to be installed in order to work. To setup the project, clone this repository and install the packages using NPM.
 
-In the project directory, you can run:
+```
+git clone https://github.com/PouRiaBG/SignUpMenu.git
+cd SignUpMenu
+npm install
+```
 
-### `npm install`
+## Usage
+You can run the project using the following command:
+`live-server public`
 
-This will download and install necessary libraries and npm packages.<br />
+## Contribution
+Found a bug or have a suggestion? create an issue and we'll respond!
 
-Now you can run the project with live-server in the project directory :
+Fixed a bug or improved on the code? Pull requests are very appreciated!
 
-### `live-server public`
+## License
+SignUp Menu is licensed under GPLv3, see LICENSE for more information.
